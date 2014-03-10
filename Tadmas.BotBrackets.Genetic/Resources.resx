@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Script" xml:space="preserve">
+    <value>var setProp = function(obj, prop, fun) {{
+    if (!obj.hasOwnProperty(prop))
+      obj[prop] = fun();
+}};
+
+var avgProps = function(obj) {{
+    var sum = 0;
+    var count = 0;
+    for (var prop in obj) {{
+      if (obj.hasOwnProperty(prop)) {{
+        sum += obj[prop];
+        count++;
+      }}
+    }}
+    return count &gt; 0 ? (sum/count) : 0;
+}};
+
+var foldGames = function(team, fun) {{
+    var $team = $(team);
+    if (!$team) return 0;
+  
+    var games = $team.Games;
+    var acc = 0;
+    for (var i=0; i&lt;games.length; i++)
+      acc += fun(games[i]);
+    return acc;
+}};
+
+var foldOpponents = function(team, fun) {{
+    var opponentData = {{}};
+    foldGames(team, function(game) {{
+      setProp(opponentData, game.Opponent, function(){{return fun(game.Opponent, team);}});
+    }});
+    return avgProps(opponentData);
+}};
+
+// http://en.wikipedia.org/wiki/Pythagorean_expectation
+var pyth = function(val, oppVal, exp) {{
+    return Math.pow(val, exp) / (Math.pow(val, exp) + Math.pow(oppVal, exp));
+}};
+
+// http://207.56.97.150/articles/playoff2002.htm
+var log5 = function(a, b) {{ return (a - a*b) / (a+b - 2*a*b); }};
+
+var oppPrefix = function(prefix) {{ return prefix == "Opp" ? "" : "Opp"; }};
+
+var winPct = function($team) {{ return $team.W / ($team.W + $team.L); }};
+var estWinPct = function($team) {{ return pyth($team.PTF, $team.PTA, {7}); }};
+
+var strengthOfSchedule = function(team) {{
+    return foldOpponents(team, function(opponent) {{
+      var $opponent = $(opponent);
+      return $opponent ? estWinPct($opponent) : 0;
+    }});
+}};
+
+// Number of possessions (used in TOpct)
+var poss = function(stats, prefix) {{
+    var x = prefix || "";
+    // Don't have number of possessions, so need to estimate.
+    return stats[x+"FGA"] - stats[x+"ORB"] + stats[x+"TO"] + 0.4*stats[x+"FTA"];
+}};
+
+// Turnover percentage
+var TOpct = function(stats, prefix) {{
+    var x = prefix || "";
+    var possessions = (poss(stats,x) + poss(stats,oppPrefix(x))) / 2;
+    return stats[x+"TO"] / possessions;
+}};
+
+var FTpct = function(stats, prefix) {{
+    var x = prefix || "";
+    return ((stats[x+"FT"] + stats[x+"FTA"])/2) / stats[x+"FGA"];
+}};
+
+var ORBpct = function(stats, prefix) {{
+    var x = prefix || "";
+    return stats[x+"ORB"] / (stats[x+"ORB"] + stats[oppPrefix(x)+"DRB"]);
+}};
+
+// Effective field goal percentage: count 3PT field goals proportional to points
+var EFGpct = function(stats, prefix) {{
+    var x = prefix || "";
+    // Note: 3FG is included in FGM
+    return (stats[x+"FGM"] + stats[x+"3FG"]/2) / stats[x+"FGA"];
+}};
+
+if (!$1.Wpct) $1.Wpct = winPct($1);
+if (!$2.Wpct) $2.Wpct = winPct($2);
+if (!$1.EstWpct) $1.EstWpct = estWinPct($1);
+if (!$2.EstWpct) $2.EstWpct = estWinPct($2);
+if (!$1.SOS) $1.SOS = strengthOfSchedule(team1);
+if (!$2.SOS) $2.SOS = strengthOfSchedule(team2);
+if (!$1.TOpct) $1.TOpct = TOpct($1);
+if (!$2.TOpct) $2.TOpct = TOpct($2);
+if (!$1.OppTOpct) $1.OppTOpct = TOpct($1,"Opp");
+if (!$2.OppTOpct) $2.OppTOpct = TOpct($2,"Opp");
+if (!$1.FTpct) $1.FTpct = FTpct($1);
+if (!$2.FTpct) $2.FTpct = FTpct($2);
+if (!$1.OppFTpct) $1.OppFTpct = FTpct($1,"Opp");
+if (!$2.OppFTpct) $2.OppFTpct = FTpct($2,"Opp");
+if (!$1.ORBpct) $1.ORBpct = ORBpct($1);
+if (!$2.ORBpct) $2.ORBpct = ORBpct($2);
+if (!$1.OppORBpct) $1.OppORBpct = ORBpct($1,"Opp");
+if (!$2.OppORBpct) $2.OppORBpct = ORBpct($2,"Opp");
+if (!$1.EFGpct) $1.EFGpct = EFGpct($1);
+if (!$2.EFGpct) $2.EFGpct = EFGpct($2);
+if (!$1.OppEFGpct) $1.OppEFGpct = EFGpct($1,"Opp");
+if (!$2.OppEFGpct) $2.OppEFGpct = EFGpct($2,"Opp");
+
+var estWcheck = log5($1.EstWpct, $2.EstWpct) - 0.5;
+var sosCheck = log5($1.SOS, $2.SOS) - 0.5;
+var luckCheck = log5($1.EstWpct - $1.Wpct, $2.EstWpct - $2.Wpct) - 0.5;
+var to1 = pyth($1.OppTOpct, $1.TOpct, {8});
+var to2 = pyth($2.OppTOpct, $2.TOpct, {8});
+var toCheck = log5(to1, to2) - 0.5;
+var ft1 = pyth($1.FTpct, $1.OppFTpct, {9});
+var ft2 = pyth($2.FTpct, $2.OppFTpct, {9});
+var ftCheck = log5(ft1, ft2) - 0.5;
+var orb1 = pyth($1.ORBpct, $1.OppORBpct, {10});
+var orb2 = pyth($2.ORBpct, $2.OppORBpct, {10});
+var orbCheck = log5(orb1, orb2) - 0.5;
+var efg1 = pyth($1.EFGpct, $1.OppEFGpct, {11});
+var efg2 = pyth($2.EFGpct, $2.OppEFGpct, {11});
+var efgCheck = log5(efg1, efg2) - 0.5;
+
+print("EstW = " + estWcheck);
+print("SOS = " + sosCheck);
+print("Luck = " + luckCheck);
+print("TO = " + toCheck);
+print("FT = " + ftCheck);
+print("ORB = " + orbCheck);
+print("EFG = " + efgCheck);
+
+var retVal = ({0}*estWcheck)+({1}*sosCheck)+({2}*luckCheck)+({3}*toCheck)+({4}*ftCheck)+({5}*orbCheck) + ({6}*efgCheck);
+</value>
+    <comment>{0} = estWcheck, {1} = sosCheck, {2} = luckCheck, {3} = toCheck, {4} = ftCheck, {5} = orbCheck, {6} = efgCheck, {7} = estWexp, {8} = toExp, {9} = ftExp, {10} = orbExp, {11} = efgExp</comment>
+  </data>
+</root>
