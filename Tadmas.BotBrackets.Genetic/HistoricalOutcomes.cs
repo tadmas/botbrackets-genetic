@@ -23,6 +23,7 @@ namespace Tadmas.BotBrackets.Genetic
                 case 2011: return Teams2011;
                 case 2012: return Teams2012;
                 case 2013: return Teams2013;
+                case 2014: return Teams2014;
                 default: return new Dictionary<int,string>();
             }
         }
@@ -35,6 +36,7 @@ namespace Tadmas.BotBrackets.Genetic
                 case 2011: return Get2011Games();
                 case 2012: return Get2012Games();
                 case 2013: return Get2013Games();
+                case 2014: return Get2014Games();
                 default: return Enumerable.Empty<Game>();
             }
         }
@@ -48,6 +50,99 @@ namespace Tadmas.BotBrackets.Genetic
                 .OrderBy(x => x.Team)
                 .Select(x => x.LastRound)
                 .ToArray();
+        }
+
+        // Copy/paste/reformat from http://www.botbrackets.com/help-positions
+        private static Dictionary<int, string> Teams2014 = new Dictionary<int,string>()
+        {
+            {1, "Florida"},           {17, "Virginia"},          {33, "Arizona"},          {49, "Wichita St."},
+            {2, "Albany (NY)"},       {18, "Coastal Caro."},     {34, "Weber St."},        {50, "Cal Poly"},
+            {3, "Colorado"},          {19, "Memphis"},           {35, "Gonzaga"},          {51, "Kentucky"},
+            {4, "Pittsburgh"},        {20, "George Washington"}, {36, "Oklahoma St."},     {52, "Kansas St."},
+            {5, "VCU"},               {21, "Cincinnati"},        {37, "Oklahoma"},         {53, "Saint Louis"},
+            {6, "Stephen F. Austin"}, {22, "Harvard"},           {38, "North Dakota St."}, {54, "North Carolina St."},
+            {7, "UCLA"},              {23, "Michigan St."},      {39, "San Diego St."},    {55, "Louisville"},
+            {8, "Tulsa"},             {24, "Delaware"},          {40, "New Mexico St."},   {56, "Manhattan"},
+            {9, "Ohio St."},          {25, "North Carolina"},    {41, "Baylor"},           {57, "Massachusetts"},
+            {10, "Dayton"},           {26, "Providence"},        {42, "Nebraska"},         {58, "Tennessee"},
+            {11, "Syracuse"},         {27, "Iowa St."},          {43, "Creighton"},        {59, "Duke"},
+            {12, "Western Mich."},    {28, "N.C. Central"},      {44, "La.-Lafayette"},    {60, "Mercer"},
+            {13, "New Mexico"},       {29, "UConn"},             {45, "Oregon"},           {61, "Texas"},
+            {14, "Stanford"},         {30, "Saint Joseph's"},    {46, "BYU"},              {62, "Arizona St."},
+            {15, "Kansas"},           {31, "Villanova"},         {47, "Wisconsin"},        {63, "Michigan"},
+            {16, "Eastern Ky."},      {32, "Milwaukee"},         {48, "American"},         {64, "Wofford"}
+        };
+
+        // http://en.wikipedia.org/wiki/2014_NCAA_Men's_Division_I_Basketball_Tournament
+        private static IEnumerable<Game> Get2014Games()
+        {
+            yield return new Game { Winner = 1, Loser = 2, Round = 1, PointDifference = 67 - 55 };
+            yield return new Game { Winner = 4, Loser = 3, Round = 1, PointDifference = 77 - 48 };
+            yield return new Game { Winner = 6, Loser = 5, Round = 1, PointDifference = 0 }; // OT, 77-75
+            yield return new Game { Winner = 7, Loser = 8, Round = 1, PointDifference = 76 - 59 };
+            yield return new Game { Winner = 10, Loser = 9, Round = 1, PointDifference = 60 - 59 };
+            yield return new Game { Winner = 11, Loser = 12, Round = 1, PointDifference = 77 - 53 };
+            yield return new Game { Winner = 14, Loser = 13, Round = 1, PointDifference = 58 - 53 };
+            yield return new Game { Winner = 15, Loser = 16, Round = 1, PointDifference = 80 - 69 };
+            yield return new Game { Winner = 1, Loser = 4, Round = 2, PointDifference = 61 - 45 };
+            yield return new Game { Winner = 7, Loser = 6, Round = 2, PointDifference = 77 - 60 };
+            yield return new Game { Winner = 10, Loser = 11, Round = 2, PointDifference = 55 - 53 };
+            yield return new Game { Winner = 14, Loser = 15, Round = 2, PointDifference = 60 - 57 };
+            yield return new Game { Winner = 1, Loser = 7, Round = 3, PointDifference = 79 - 68 };
+            yield return new Game { Winner = 10, Loser = 14, Round = 3, PointDifference = 82 - 72 };
+            yield return new Game { Winner = 1, Loser = 10, Round = 4, PointDifference = 62 - 52 };
+
+            yield return new Game { Winner = 17, Loser = 18, Round = 1, PointDifference = 70 - 59 };
+            yield return new Game { Winner = 19, Loser = 20, Round = 1, PointDifference = 71 - 68 };
+            yield return new Game { Winner = 22, Loser = 21, Round = 1, PointDifference = 61 - 57 };
+            yield return new Game { Winner = 23, Loser = 24, Round = 1, PointDifference = 93 - 78 };
+            yield return new Game { Winner = 25, Loser = 26, Round = 1, PointDifference = 79 - 77 };
+            yield return new Game { Winner = 27, Loser = 28, Round = 1, PointDifference = 93 - 75 };
+            yield return new Game { Winner = 29, Loser = 30, Round = 1, PointDifference = 0 }; // OT, 89-81
+            yield return new Game { Winner = 31, Loser = 32, Round = 1, PointDifference = 73 - 53 };
+            yield return new Game { Winner = 17, Loser = 19, Round = 2, PointDifference = 78 - 60 };
+            yield return new Game { Winner = 23, Loser = 22, Round = 2, PointDifference = 80 - 73 };
+            yield return new Game { Winner = 27, Loser = 25, Round = 2, PointDifference = 85 - 83 };
+            yield return new Game { Winner = 29, Loser = 31, Round = 2, PointDifference = 77 - 65 };
+            yield return new Game { Winner = 23, Loser = 17, Round = 3, PointDifference = 61 - 59 };
+            yield return new Game { Winner = 29, Loser = 27, Round = 3, PointDifference = 81 - 76 };
+            yield return new Game { Winner = 29, Loser = 23, Round = 4, PointDifference = 60 - 54 };
+
+            yield return new Game { Winner = 33, Loser = 34, Round = 1, PointDifference = 68 - 59 };
+            yield return new Game { Winner = 35, Loser = 36, Round = 1, PointDifference = 85 - 77 };
+            yield return new Game { Winner = 38, Loser = 37, Round = 1, PointDifference = 0 }; // OT, 80-75
+            yield return new Game { Winner = 39, Loser = 40, Round = 1, PointDifference = 0 }; // OT, 73-69
+            yield return new Game { Winner = 41, Loser = 42, Round = 1, PointDifference = 74 - 60 };
+            yield return new Game { Winner = 43, Loser = 44, Round = 1, PointDifference = 76 - 66 };
+            yield return new Game { Winner = 45, Loser = 46, Round = 1, PointDifference = 87 - 68 };
+            yield return new Game { Winner = 47, Loser = 48, Round = 1, PointDifference = 75 - 35 };
+            yield return new Game { Winner = 33, Loser = 35, Round = 2, PointDifference = 84 - 61 };
+            yield return new Game { Winner = 39, Loser = 38, Round = 2, PointDifference = 63 - 44 };
+            yield return new Game { Winner = 41, Loser = 43, Round = 2, PointDifference = 85 - 55 };
+            yield return new Game { Winner = 47, Loser = 45, Round = 2, PointDifference = 85 - 77 };
+            yield return new Game { Winner = 33, Loser = 39, Round = 3, PointDifference = 70 - 64 };
+            yield return new Game { Winner = 47, Loser = 41, Round = 3, PointDifference = 69 - 52 };
+            yield return new Game { Winner = 47, Loser = 33, Round = 4, PointDifference = 0 }; // OT, 64-63
+
+            yield return new Game { Winner = 49, Loser = 50, Round = 1, PointDifference = 64 - 37 };
+            yield return new Game { Winner = 51, Loser = 52, Round = 1, PointDifference = 56 - 49 };
+            yield return new Game { Winner = 53, Loser = 54, Round = 1, PointDifference = 0 }; // OT, 83-80
+            yield return new Game { Winner = 55, Loser = 56, Round = 1, PointDifference = 71 - 64 };
+            yield return new Game { Winner = 58, Loser = 57, Round = 1, PointDifference = 86 - 67 };
+            yield return new Game { Winner = 60, Loser = 59, Round = 1, PointDifference = 78 - 71 };
+            yield return new Game { Winner = 61, Loser = 62, Round = 1, PointDifference = 87 - 85 };
+            yield return new Game { Winner = 63, Loser = 64, Round = 1, PointDifference = 57 - 40 };
+            yield return new Game { Winner = 51, Loser = 49, Round = 2, PointDifference = 78 - 76 };
+            yield return new Game { Winner = 55, Loser = 53, Round = 2, PointDifference = 66 - 51 };
+            yield return new Game { Winner = 58, Loser = 60, Round = 2, PointDifference = 83 - 63 };
+            yield return new Game { Winner = 63, Loser = 61, Round = 2, PointDifference = 79 - 65 };
+            yield return new Game { Winner = 51, Loser = 55, Round = 3, PointDifference = 74 - 69 };
+            yield return new Game { Winner = 63, Loser = 58, Round = 3, PointDifference = 73 - 71 };
+            yield return new Game { Winner = 51, Loser = 63, Round = 4, PointDifference = 75 - 72 };
+
+            yield return new Game { Winner = 29, Loser = 1, Round = 5, PointDifference = 63 - 53 };
+            yield return new Game { Winner = 51, Loser = 47, Round = 5, PointDifference = 74 - 73 };
+            yield return new Game { Winner = 29, Loser = 51, Round = 6, PointDifference = 60 - 54 };
         }
 
         // Copy/paste/reformat from http://www.botbrackets.com/help-positions

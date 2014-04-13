@@ -7,7 +7,7 @@ namespace Tadmas.BotBrackets.Genetic
 {
     public static class FitnessFunction
     {
-        private static int[] Seasons = new int[] { 2010, 2011, 2012, 2013 };
+        private static int[] Seasons = new int[] { 2010, 2011, 2012, 2013, 2014 };
 
         public static double Evaluate(Genome genome, string authCookie)
         {
