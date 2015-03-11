@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CombinationsExtension.cs" />
     <Compile Include="Genome.cs" />
     <Compile Include="FitnessFunction.cs" />
     <Compile Include="HistoricalOutcomes.cs" />

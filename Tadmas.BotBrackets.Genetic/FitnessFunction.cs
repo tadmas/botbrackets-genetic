@@ -7,13 +7,11 @@ namespace Tadmas.BotBrackets.Genetic
 {
     public static class FitnessFunction
     {
-        private static int[] Seasons = new int[] { 2010, 2011, 2012, 2013, 2014 };
-
-        public static double Evaluate(Genome genome, string authCookie)
+        public static double Evaluate(Genome genome, IEnumerable<int> seasons, string authCookie)
         {
             double squareError = 0.0;
 
-            foreach (int season in Seasons)
+            foreach (int season in seasons)
             {
                 var teams = HistoricalOutcomes.GetTeams(season);
                 var games = HistoricalOutcomes.GetGames(season).ToLookup(g => g.Round);

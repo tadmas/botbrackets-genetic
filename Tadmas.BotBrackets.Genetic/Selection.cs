@@ -9,11 +9,13 @@ namespace Tadmas.BotBrackets.Genetic
     {
         public static Population SelectNextGeneration(Population population, Random random, string authCookie)
         {
+            var seasons = HistoricalOutcomes.GetRandomSeasons(3, random);
+
             // First, get the fitness value for all the members of the population.
             var scores = population.Members
                 .AsParallel()
                 .WithDegreeOfParallelism(3)
-                .Select(x => new { Genome = x, Score = FitnessFunction.Evaluate(x, authCookie) })
+                .Select(x => new { Genome = x, Score = FitnessFunction.Evaluate(x, seasons, authCookie) })
                 .ToList();
 
             scores.Sort((a, b) => Comparer<double>.Default.Compare(a.Score, b.Score));

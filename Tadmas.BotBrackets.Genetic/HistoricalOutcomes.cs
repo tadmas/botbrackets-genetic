@@ -7,6 +7,18 @@ namespace Tadmas.BotBrackets.Genetic
 {
     public static class HistoricalOutcomes
     {
+        private static int[] Seasons = new int[] { 2010, 2011, 2012, 2013, 2014 };
+
+        public static IEnumerable<int> GetRandomSeasons(int k, Random r)
+        {
+            return Seasons.Choose(k, r);
+        }
+
+        public static IEnumerable<int> GetAllSeasons()
+        {
+            return Seasons.Select(x => x);
+        }
+
         public class Game
         {
             public int Winner { get; set; }
